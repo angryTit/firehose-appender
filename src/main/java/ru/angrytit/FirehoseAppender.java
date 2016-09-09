@@ -14,7 +14,6 @@ import com.amazonaws.services.kinesisfirehose.model.ResourceNotFoundException;
 import java.nio.ByteBuffer;
 
 import static java.util.Objects.isNull;
-import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 /**
  * @author Mikhail Tyamin <a href="mailto:mikhail.tiamine@gmail.com>mikhail.tiamine@gmail.com</a>
@@ -81,15 +80,15 @@ public class FirehoseAppender extends AppenderBase<ILoggingEvent> {
             addError("No encoder set for the appender : [" + name + "]");
             return;
         }
-        if (isEmpty(region)) {
+        if (isNull(region) || region.isEmpty()) {
             addError("No region set for the appender : [" + name + "]");
             return;
         }
-        if (isEmpty(deliveryStream)) {
+        if (isNull(deliveryStream) || deliveryStream.isEmpty()) {
             addError("No deliveryStream set for the appender : [" + name + "]");
             return;
         }
-        if (isEmpty(encoding)) {
+        if (isNull(encoding) || encoding.isEmpty()) {
             encoding = DEFAULT_ENCODING;
         }
         client = new AmazonKinesisFirehoseClient();
