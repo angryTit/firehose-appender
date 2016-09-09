@@ -1,8 +1,8 @@
 # LOGBack Appender for Amazon Kinesis
 
 Unsynchronised. Use with `ch.qos.logback.classic.AsyncAppender`
-
-        <configuration>
+    
+    <configuration>
 
     <appender name="FIREHOSE" class="ru.angrytit.FirehoseAppender">
         <encoder>
