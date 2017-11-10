@@ -1,4 +1,4 @@
-# LOGBack Appender for Amazon Kinesis
+# LOGBack Appender for Amazon Firehose
 
 Unsynchronised. Use with `ch.qos.logback.classic.AsyncAppender`
     
